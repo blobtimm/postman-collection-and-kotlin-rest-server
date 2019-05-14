@@ -1,0 +1,542 @@
+{
+	"info": {
+		"_postman_id": "229618f8-dcb4-4922-9464-c7c5ea528222",
+		"name": "QAIQuest 2019",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Level 1",
+			"item": [
+				{
+					"name": "All Persons",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url}}person",
+							"host": [
+								"{{base_url}}person"
+							]
+						},
+						"description": "Get all persons in the Db"
+					},
+					"response": []
+				},
+				{
+					"name": "Person by Username",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url}}person?username=anon",
+							"host": [
+								"{{base_url}}person"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "anon"
+								}
+							]
+						},
+						"description": "Get all persons in the Db"
+					},
+					"response": [
+						{
+							"name": "By first_name (500 ISE)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}person?first_name=tommy",
+									"host": [
+										"{{base_url}}person"
+									],
+									"query": [
+										{
+											"key": "first_name",
+											"value": "tommy"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 08 Apr 2019 21:33:17 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Server",
+									"value": "Jetty(9.4.z-SNAPSHOT)"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"dateCreatedPretty\": \"2012-11-23\",\n        \"id\": 3,\n        \"firstName\": \"Adrian\",\n        \"lastName\": \"Krion\",\n        \"username\": \"anon\",\n        \"dateCreated\": {\n            \"iLocalMillis\": 1353628800000,\n            \"iChronology\": {\n                \"iBase\": {\n                    \"iMinDaysInFirstWeek\": 4\n                }\n            }\n        }\n    }\n]"
+						},
+						{
+							"name": "By Username",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}person?username=anon",
+									"host": [
+										"{{base_url}}person"
+									],
+									"query": [
+										{
+											"key": "username",
+											"value": "anon"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 08 Apr 2019 21:33:17 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Server",
+									"value": "Jetty(9.4.z-SNAPSHOT)"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"dateCreatedPretty\": \"2012-11-23\",\n        \"id\": 3,\n        \"firstName\": \"Adrian\",\n        \"lastName\": \"Krion\",\n        \"username\": \"anon\",\n        \"dateCreated\": {\n            \"iLocalMillis\": 1353628800000,\n            \"iChronology\": {\n                \"iBase\": {\n                    \"iMinDaysInFirstWeek\": 4\n                }\n            }\n        }\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Person by First Name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url}}person?first_name=tommy",
+							"host": [
+								"{{base_url}}person"
+							],
+							"query": [
+								{
+									"key": "first_name",
+									"value": "tommy"
+								}
+							]
+						},
+						"description": "Get all persons in the Db"
+					},
+					"response": [
+						{
+							"name": "By Username",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}person?username=anon",
+									"host": [
+										"{{base_url}}person"
+									],
+									"query": [
+										{
+											"key": "username",
+											"value": "anon"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 08 Apr 2019 21:33:17 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Server",
+									"value": "Jetty(9.4.z-SNAPSHOT)"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"dateCreatedPretty\": \"2012-11-23\",\n        \"id\": 3,\n        \"firstName\": \"Adrian\",\n        \"lastName\": \"Krion\",\n        \"username\": \"anon\",\n        \"dateCreated\": {\n            \"iLocalMillis\": 1353628800000,\n            \"iChronology\": {\n                \"iBase\": {\n                    \"iMinDaysInFirstWeek\": 4\n                }\n            }\n        }\n    }\n]"
+						},
+						{
+							"name": "By first_name (500 ISE)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}person?first_name=tommy",
+									"host": [
+										"{{base_url}}person"
+									],
+									"query": [
+										{
+											"key": "first_name",
+											"value": "tommy"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 08 Apr 2019 21:33:17 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Server",
+									"value": "Jetty(9.4.z-SNAPSHOT)"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"dateCreatedPretty\": \"2012-11-23\",\n        \"id\": 3,\n        \"firstName\": \"Adrian\",\n        \"lastName\": \"Krion\",\n        \"username\": \"anon\",\n        \"dateCreated\": {\n            \"iLocalMillis\": 1353628800000,\n            \"iChronology\": {\n                \"iBase\": {\n                    \"iMinDaysInFirstWeek\": 4\n                }\n            }\n        }\n    }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Level 2",
+			"item": [
+				{
+					"name": "All Persons",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url}}person-auth",
+							"host": [
+								"{{base_url}}person-auth"
+							]
+						},
+						"description": "Get all persons in the Db"
+					},
+					"response": []
+				},
+				{
+					"name": "All Persons w/ Auth",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth",
+								"value": "some-secret",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url}}person-auth",
+							"host": [
+								"{{base_url}}person-auth"
+							]
+						},
+						"description": "Get all persons in the Db"
+					},
+					"response": []
+				},
+				{
+					"name": "All Persons w/ Client ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth",
+								"type": "text",
+								"value": "some-secret"
+							},
+							{
+								"key": "client-id",
+								"value": "android",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url}}person-auth",
+							"host": [
+								"{{base_url}}person-auth"
+							]
+						},
+						"description": "Get all persons in the Db"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Level 3",
+			"item": [
+				{
+					"name": "Register Person (no first_name)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"last_name\": \"Timm\",\n\t\"username\": \"bajabob\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}person",
+							"host": [
+								"{{base_url}}person"
+							]
+						},
+						"description": "Get all persons in the Db"
+					},
+					"response": []
+				},
+				{
+					"name": "Register Person",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"first_name\": \"bob\",\n\t\"last_name\": \"Timm\",\n\t\"username\": \"bajabob\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}person",
+							"host": [
+								"{{base_url}}person"
+							]
+						},
+						"description": "Get all persons in the Db"
+					},
+					"response": []
+				},
+				{
+					"name": "Register Person (Random)",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "28c06901-8a72-4007-9338-c9ba0f4c3951",
+								"exec": [
+									"function randomName(list) {",
+									"    var i = Math.floor(Math.random() * list.length);",
+									"    return list[i].name;",
+									"}",
+									"",
+									"var firstNames = [",
+									"\t{\"name\": \"Bob\"},",
+									"\t{\"name\": \"Joy\"},",
+									"\t{\"name\": \"Ani\"},",
+									"\t{\"name\": \"Ivy\"},",
+									"\t{\"name\": \"Kim\"},",
+									"\t{\"name\": \"Ben\"},",
+									"\t{\"name\": \"Cal\"},",
+									"\t{\"name\": \"Eve\"},",
+									"\t{\"name\": \"Dan\"},",
+									"\t{\"name\": \"Liz\"},",
+									"\t{\"name\": \"Eli\"},",
+									"\t{\"name\": \"Jill\"},",
+									"\t{\"name\": \"Jay\"}",
+									"];",
+									"",
+									"var surnames = [",
+									"\t{\"name\": \"Craig\"},",
+									"\t{\"name\": \"Rosa\"},",
+									"\t{\"name\": \"Davis\"},",
+									"\t{\"name\": \"Roach\"},",
+									"\t{\"name\": \"Decker\"},",
+									"\t{\"name\": \"Olsen\"},",
+									"\t{\"name\": \"Palmer\"},",
+									"\t{\"name\": \"Cash\"},",
+									"\t{\"name\": \"French\"},",
+									"\t{\"name\": \"Wright\"},",
+									"\t{\"name\": \"Meyers\"},",
+									"\t{\"name\": \"Walker\"},",
+									"\t{\"name\": \"Carr\"},",
+									"\t{\"name\": \"Graham\"},",
+									"\t{\"name\": \"Donovan\"},",
+									"\t{\"name\": \"Pitts\"},",
+									"\t{\"name\": \"Graves\"},",
+									"\t{\"name\": \"Wall\"},",
+									"\t{\"name\": \"Pate\"},",
+									"\t{\"name\": \"Wright\"},",
+									"\t{\"name\": \"Nguyen\"},",
+									"\t{\"name\": \"Arnold\"},",
+									"\t{\"name\": \"Franco\"},",
+									"\t{\"name\": \"Calhoun\"},",
+									"\t{\"name\": \"Madden\"},",
+									"\t{\"name\": \"Dillard\"},",
+									"\t{\"name\": \"Maxwell\"},",
+									"\t{\"name\": \"Mills\"},",
+									"\t{\"name\": \"Howard\"},",
+									"\t{\"name\": \"Hudson\"},",
+									"\t{\"name\": \"Horne\"},",
+									"\t{\"name\": \"Newton\"},",
+									"\t{\"name\": \"Burgess\"},",
+									"\t{\"name\": \"Abbott\"},",
+									"\t{\"name\": \"Brown\"},",
+									"\t{\"name\": \"Bowman\"},",
+									"\t{\"name\": \"Carr\"},",
+									"\t{\"name\": \"Branch\"},",
+									"\t{\"name\": \"Howell\"},",
+									"\t{\"name\": \"Knapp\"},",
+									"\t{\"name\": \"Timm\"},",
+									"\t{\"name\": \"Frost\"},",
+									"\t{\"name\": \"Norris\"},",
+									"\t{\"name\": \"Walls\"},",
+									"\t{\"name\": \"Pitts\"},",
+									"\t{\"name\": \"Mclean\"},",
+									"\t{\"name\": \"Brock\"},",
+									"\t{\"name\": \"Rhodes\"},",
+									"\t{\"name\": \"Steele\"},",
+									"\t{\"name\": \"Buck\"},",
+									"\t{\"name\": \"Watson\"},",
+									"\t{\"name\": \"Riley\"},",
+									"\t{\"name\": \"Gould\"},",
+									"\t{\"name\": \"Moon\"},",
+									"\t{\"name\": \"Howe\"},",
+									"\t{\"name\": \"Andrews\"}",
+									"];",
+									"",
+									"function createUsername(first, last){",
+									"    var username = first+last;",
+									"    if(username.length > 18){",
+									"        username = username.substring(0, 18);",
+									"    }",
+									"    // random number from 1 to 99",
+									"    username = username + Math.floor((Math.random() * 99) + 1);",
+									"    return username;",
+									"}",
+									"",
+									"var first = randomName(firstNames);",
+									"var last = randomName(surnames);",
+									"var username = createUsername(first, last);",
+									"",
+									"console.log(\"Creating person (first/last): \"+first+\" \"+last);",
+									"console.log(\"Username: \"+username);",
+									"",
+									"postman.setEnvironmentVariable(\"qai.reg.name.first\", first);",
+									"postman.setEnvironmentVariable(\"qai.reg.name.last\", last);",
+									"postman.setEnvironmentVariable(\"qai.reg.username\", username);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"first_name\": \"{{qai.reg.name.first}}\",\n\t\"last_name\": \"{{qai.reg.name.last}}\",\n\t\"username\": \"{{qai.reg.username}}\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}person",
+							"host": [
+								"{{base_url}}person"
+							]
+						},
+						"description": "Get all persons in the Db"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
