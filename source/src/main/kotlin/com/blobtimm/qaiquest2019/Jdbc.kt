@@ -1,4 +1,4 @@
-package com.bajabob.qaiquest2019
+package com.blobtimm.qaiquest2019
 
 import org.h2.jdbcx.JdbcDataSource
 import java.sql.Connection
