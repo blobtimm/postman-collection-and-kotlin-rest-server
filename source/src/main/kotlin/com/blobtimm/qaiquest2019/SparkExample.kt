@@ -6,9 +6,14 @@ import org.joda.time.LocalDate
 import org.joda.time.format.DateTimeFormat
 import spark.Spark.*
 import java.sql.ResultSet
+import kotlin.random.Random
 
 data class Error(val message: String)
 
+data class Logout(
+        @SerializedName("auth_token")
+        val authToken: String?
+)
 data class UserAction (
         @SerializedName("auth_token")
         val authToken: String?
@@ -46,7 +51,7 @@ data class Person(
     }
 }
 
-val userSecret = "secret55"
+var userSecret: String? = null
 val authToken = "some-secret"
 val clients = listOf("android", "ios", "web")
 val gson = Gson()
@@ -157,7 +162,9 @@ fun main() {
         if (login.username.equals("bob", ignoreCase = true)) {
             if (login.password.equals("Test1234", ignoreCase = false)) {
                 // we have a successful login!
-                halt(200, gson.toJson(LoginResponse(userSecret)))
+                val secret = "Secret_${Random.nextInt(1000)}"
+                userSecret = secret
+                halt(200, gson.toJson(LoginResponse(secret)))
             } else {
                 onError(404, "Invalid username / password")
             }
@@ -191,6 +198,36 @@ fun main() {
          */
         halt(200, gson.toJson(UserActionResponse("You made 'bob' and admin!")))
     }
+
+    /**
+     * We made this a "put" because it is changing the state of the user's account
+     */
+    post("/logout") { req, res ->
+        res.type("application/json")
+
+        val logout = gson.fromJson(req.body(), Logout::class.java)
+
+        if (logout.authToken == null) {
+            onError(400, "Please specify an auth token")
+        }
+
+        /**
+         * here we validate the auth token we got in the previous login response
+         * so that the user can do some authorized action!
+         */
+        if (!logout.authToken.equals(userSecret)) {
+            onError(400, "Invalid secret supplied/already logged out!")
+        }
+
+        /**
+         * "logout" the user
+         * typically this is when we would remove "userSecret" from the database
+         */
+        userSecret = null
+        halt(201)
+    }
+
+
 }
 
 private fun onError(status: Int, message: String) {

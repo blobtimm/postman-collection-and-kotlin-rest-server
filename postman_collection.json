@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "229618f8-dcb4-4922-9464-c7c5ea528222",
+		"_postman_id": "db107352-7427-4ca6-8d5b-8ff9a0045ae4",
 		"name": "QAIQuest 2019",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -13,10 +13,6 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{base_url}}person",
 							"host": [
@@ -32,10 +28,6 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{base_url}}person?username=anon",
 							"host": [
@@ -52,23 +44,19 @@
 					},
 					"response": [
 						{
-							"name": "By first_name (500 ISE)",
+							"name": "By Username",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
-									"raw": "{{base_url}}person?first_name=tommy",
+									"raw": "{{base_url}}person?username=anon",
 									"host": [
 										"{{base_url}}person"
 									],
 									"query": [
 										{
-											"key": "first_name",
-											"value": "tommy"
+											"key": "username",
+											"value": "anon"
 										}
 									]
 								}
@@ -98,23 +86,19 @@
 							"body": "[\n    {\n        \"dateCreatedPretty\": \"2012-11-23\",\n        \"id\": 3,\n        \"firstName\": \"Adrian\",\n        \"lastName\": \"Krion\",\n        \"username\": \"anon\",\n        \"dateCreated\": {\n            \"iLocalMillis\": 1353628800000,\n            \"iChronology\": {\n                \"iBase\": {\n                    \"iMinDaysInFirstWeek\": 4\n                }\n            }\n        }\n    }\n]"
 						},
 						{
-							"name": "By Username",
+							"name": "By first_name (500 ISE)",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
-									"raw": "{{base_url}}person?username=anon",
+									"raw": "{{base_url}}person?first_name=tommy",
 									"host": [
 										"{{base_url}}person"
 									],
 									"query": [
 										{
-											"key": "username",
-											"value": "anon"
+											"key": "first_name",
+											"value": "tommy"
 										}
 									]
 								}
@@ -150,10 +134,6 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{base_url}}person?first_name=tommy",
 							"host": [
@@ -170,23 +150,19 @@
 					},
 					"response": [
 						{
-							"name": "By Username",
+							"name": "By first_name (500 ISE)",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
-									"raw": "{{base_url}}person?username=anon",
+									"raw": "{{base_url}}person?first_name=tommy",
 									"host": [
 										"{{base_url}}person"
 									],
 									"query": [
 										{
-											"key": "username",
-											"value": "anon"
+											"key": "first_name",
+											"value": "tommy"
 										}
 									]
 								}
@@ -216,23 +192,19 @@
 							"body": "[\n    {\n        \"dateCreatedPretty\": \"2012-11-23\",\n        \"id\": 3,\n        \"firstName\": \"Adrian\",\n        \"lastName\": \"Krion\",\n        \"username\": \"anon\",\n        \"dateCreated\": {\n            \"iLocalMillis\": 1353628800000,\n            \"iChronology\": {\n                \"iBase\": {\n                    \"iMinDaysInFirstWeek\": 4\n                }\n            }\n        }\n    }\n]"
 						},
 						{
-							"name": "By first_name (500 ISE)",
+							"name": "By Username",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
 								"url": {
-									"raw": "{{base_url}}person?first_name=tommy",
+									"raw": "{{base_url}}person?username=anon",
 									"host": [
 										"{{base_url}}person"
 									],
 									"query": [
 										{
-											"key": "first_name",
-											"value": "tommy"
+											"key": "username",
+											"value": "anon"
 										}
 									]
 								}
@@ -273,10 +245,6 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{base_url}}person-auth",
 							"host": [
@@ -298,10 +266,6 @@
 								"type": "text"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{base_url}}person-auth",
 							"host": [
@@ -328,10 +292,6 @@
 								"type": "text"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{base_url}}person-auth",
 							"host": [
@@ -533,6 +493,214 @@
 							]
 						},
 						"description": "Get all persons in the Db"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Level 4",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2fa5ba85-9504-47f0-8597-3a2638ce5583",
+								"exec": [
+									"pm.test(\"Response contains authToken && HTTP Status 200\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    ",
+									"    var authToken = jsonData.auth_token;",
+									"    ",
+									"    // here we can also test that the auth_token is not null",
+									"    // or is type string of at least a specific numbers of characters",
+									"    // this is just a simple test for sake of explination ",
+									"    ",
+									"    // TODO!",
+									"    // pm.expect(authToken).to.notNull();",
+									"    ",
+									"    pm.response.to.have.status(200);",
+									"    ",
+									"    // here we set the auth token as a Global Variable so that we can ",
+									"    // access it in subsequent requests!",
+									"    pm.globals.set(\"login.auth_token\", authToken);",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"bob\",\n\t\"password\": \"Test1234\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}login",
+							"host": [
+								"{{base_url}}login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Account",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a879e0a0-f90f-41a0-b327-e93271af7ddb",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    // expect that we performed some acton with success",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"auth_token\": \"{{login.auth_token}}\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}update-account",
+							"host": [
+								"{{base_url}}update-account"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"auth_token\": \"{{login.auth_token}}\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}logout",
+							"host": [
+								"{{base_url}}logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout (logged out)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "de8a830e-4f1c-48bd-916b-57f2dfb0758a",
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    // we expect on this second attempt that the user session has been nuked and ",
+									"    // the API responded with an error!",
+									"    pm.response.to.have.status(400);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"auth_token\": \"{{login.auth_token}}\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}logout",
+							"host": [
+								"{{base_url}}logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Account (logged out)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c91dc9c1-9db3-4612-af47-94e1147c0c2c",
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    // we expect on this second attempt that the user session has been nuked and ",
+									"    // the API responded with an error!",
+									"    pm.response.to.have.status(400);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"auth_token\": \"{{login.auth_token}}\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}update-account",
+							"host": [
+								"{{base_url}}update-account"
+							]
+						}
 					},
 					"response": []
 				}
