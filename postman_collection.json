@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "db107352-7427-4ca6-8d5b-8ff9a0045ae4",
+		"_postman_id": "cd5bde97-3a34-45dd-a282-6cf60a1762bb",
 		"name": "QAIQuest 2019",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -44,19 +44,19 @@
 					},
 					"response": [
 						{
-							"name": "By Username",
+							"name": "By first_name (500 ISE)",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{base_url}}person?username=anon",
+									"raw": "{{base_url}}person?first_name=tommy",
 									"host": [
 										"{{base_url}}person"
 									],
 									"query": [
 										{
-											"key": "username",
-											"value": "anon"
+											"key": "first_name",
+											"value": "tommy"
 										}
 									]
 								}
@@ -86,19 +86,19 @@
 							"body": "[\n    {\n        \"dateCreatedPretty\": \"2012-11-23\",\n        \"id\": 3,\n        \"firstName\": \"Adrian\",\n        \"lastName\": \"Krion\",\n        \"username\": \"anon\",\n        \"dateCreated\": {\n            \"iLocalMillis\": 1353628800000,\n            \"iChronology\": {\n                \"iBase\": {\n                    \"iMinDaysInFirstWeek\": 4\n                }\n            }\n        }\n    }\n]"
 						},
 						{
-							"name": "By first_name (500 ISE)",
+							"name": "By Username",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{base_url}}person?first_name=tommy",
+									"raw": "{{base_url}}person?username=anon",
 									"host": [
 										"{{base_url}}person"
 									],
 									"query": [
 										{
-											"key": "first_name",
-											"value": "tommy"
+											"key": "username",
+											"value": "anon"
 										}
 									]
 								}
@@ -509,7 +509,11 @@
 							"script": {
 								"id": "2fa5ba85-9504-47f0-8597-3a2638ce5583",
 								"exec": [
-									"pm.test(\"Response contains authToken && HTTP Status 200\", function () {",
+									"pm.test(\"HTTP Status is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response contains authToken\", function () {",
 									"    var jsonData = pm.response.json();",
 									"    ",
 									"    var authToken = jsonData.auth_token;",
@@ -518,17 +522,12 @@
 									"    // or is type string of at least a specific numbers of characters",
 									"    // this is just a simple test for sake of explination ",
 									"    ",
-									"    // TODO!",
-									"    // pm.expect(authToken).to.notNull();",
-									"    ",
-									"    pm.response.to.have.status(200);",
+									"    pm.expect(authToken).not.equal(null);",
 									"    ",
 									"    // here we set the auth token as a Global Variable so that we can ",
 									"    // access it in subsequent requests!",
 									"    pm.globals.set(\"login.auth_token\", authToken);",
-									"});",
-									"",
-									""
+									"});"
 								],
 								"type": "text/javascript"
 							}
