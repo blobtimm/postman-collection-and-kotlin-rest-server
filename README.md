@@ -31,9 +31,6 @@ This is an example application that uses the [Spark framework](http://sparkjava.
 * In the table, put a variable "base_url" with the initial value "http://localhost:4567/". This tells Postman where to point requests. 
 * Click "Update"
 
-10) 
+10) Select "qaiquest_local" from the dropdown at the top left of the screen. 
 
-# Level 1
-
-* Validates that our server is running properly!
-* Shows `base_url` in action. 
+11) Expand Level 1 folder, select the first API call, and select "Send"
